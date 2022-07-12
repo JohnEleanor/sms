@@ -1,8 +1,8 @@
 <div class="card card-outline card-primary">
 	<div class="card-header">
-		<h3 class="card-title">List of Purchase Orders</h3>
+		<h3 class="card-title">รายการใบสั่งซื้อ</h3>
         <div class="card-tools">
-			<a href="<?php echo base_url ?>admin/?page=purchase_order/manage_po" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
+			<a href="<?php echo base_url ?>admin/?page=purchase_order/manage_po" class="btn btn-flat btn-primary rounded"><span class="fas fa-plus"></span>  สร้างใหม่</a>
 		</div>
 	</div>
 	<div class="card-body">
@@ -20,12 +20,12 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Date Created</th>
+                            <th>ID</th>
+                            <th>วันที่สร้าง</th>
                             <th>PO Code</th>
-                            <th>Supplier</th>
-                            <th>Items</th>
-                            <th>Status</th>
+                            <th>ผู้ผลิต</th>
+                            <th>สินค้า</th>
+                            <th>สถานะ</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -64,11 +64,11 @@
                                         <a class="dropdown-item" href="<?php echo base_url.'admin?page=receiving/manage_receiving&po_id='.$row['id'] ?>" data-id="<?php echo $row['id'] ?>"><span class="fa fa-boxes text-dark"></span> Receive</a>
                                         <div class="dropdown-divider"></div>
                                     <?php endif; ?>
-                                        <a class="dropdown-item" href="<?php echo base_url.'admin?page=purchase_order/view_po&id='.$row['id'] ?>" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
+                                        <a class="dropdown-item" href="<?php echo base_url.'admin?page=purchase_order/view_po&id='.$row['id'] ?>" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> ดู</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="<?php echo base_url.'admin?page=purchase_order/manage_po&id='.$row['id'] ?>" data-id="<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
+                                        <a class="dropdown-item" href="<?php echo base_url.'admin?page=purchase_order/manage_po&id='.$row['id'] ?>" data-id="<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> เเก้ไข</a>
                                         <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
+                                        <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> ลบ</a>
                                     </div>
                                 </td>
                             </tr>
@@ -82,7 +82,7 @@
 <script>
 	$(document).ready(function(){
 		$('.delete_data').click(function(){
-			_conf("Are you sure to delete this Purchase Order permanently?","delete_po",[$(this).attr('data-id')])
+			_conf("คุณแน่ใจหรือว่าต้องการลบใบสั่งซื้อนี้อย่างถาวร?","delete_po",[$(this).attr('data-id')])
 		})
 		$('.view_details').click(function(){
 			uni_modal("Payment Details","transaction/view_payment.php?id="+$(this).attr('data-id'),'mid-large')

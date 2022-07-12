@@ -15,7 +15,7 @@
 </style>
 <div class="card card-outline card-primary">
 	<div class="card-header">
-		<h3 class="card-title">List of System Users</h3>
+		<h3 class="card-title">รายชื่อผู้ใช้ระบบ</h3>
 	</div>
 	<div class="card-body">
 		<div class="container-fluid">
@@ -33,9 +33,9 @@
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>Date Registered</th>
+						<th>วันที่ลงทะเบียน</th>
 						<th>Avatar</th>
-						<th>Name</th>
+						<th>ชื่อ</th>
 						<th>Email</th>
 						<th>Action</th>
 					</tr>
@@ -74,7 +74,7 @@
 <script>
 	$(document).ready(function(){
 		$('.delete_data').click(function(){
-			_conf("Are you sure to delete this User permanently?","delete_user",[$(this).attr('data-id')])
+			_conf("คุณเเน่ใจหรือไม่ว่าต้องการลบ","delete_user",[$(this).attr('data-id')])
 		})
 		$('.view_details').click(function(){
 			uni_modal("Client Details","clients/view_details.php?id="+$(this).attr('data-id'))

@@ -23,7 +23,7 @@ if(isset($_GET['id'])){
 </style>
 <div class="card card-outline card-primary">
     <div class="card-header">
-        <h4 class="card-title"><?php echo isset($id) ? "Sale Details - ".$sales_code : 'Create New Sale Record' ?></h4>
+        <h4 class="card-title"><?php echo isset($id) ? "Sale Details - ".$sales_code : 'สร้างบันทึกการขายใหม่' ?></h4>
     </div>
     <div class="card-body">
         <form action="" id="sale-form">
@@ -31,19 +31,19 @@ if(isset($_GET['id'])){
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-                        <label class="control-label text-info">Sale Code</label>
+                        <label class="control-label text-info">รหัสการขาย</label>
                         <input type="text" class="form-control form-control-sm rounded-0" value="<?php echo isset($sales_code) ? $sales_code : '' ?>" readonly>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="client" class="control-label text-info">Client Name</label>
+                            <label for="client" class="control-label text-info">ชื่อลูกค้า</label>
                             <input type="text" name="client" class="form-control form-control-sm rounded-0" value="<?php echo isset($client) ? $client : 'Guest' ?>" >
                         </div>
                     </div>
                 </div>
                 <hr>
                 <fieldset>
-                    <legend class="text-info">Item Form</legend>
+                    <legend class="text-info">แบบฟอร์มรายการ</legend>
                     <div class="row justify-content-center align-items-end">
                             <?php 
                                 $item_arr = array();
@@ -56,7 +56,7 @@ if(isset($_GET['id'])){
                             ?>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="item_id" class="control-label">Item</label>
+                                <label for="item_id" class="control-label">สินค้า</label>
                                 <select  id="item_id" class="custom-select select2">
                                     <option disabled selected></option>
                                     <?php foreach($item_arr as $k =>$v): ?>
@@ -67,19 +67,19 @@ if(isset($_GET['id'])){
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="unit" class="control-label">Unit</label>
+                                <label for="unit" class="control-label">หน่วย</label>
                                 <input type="text" class="form-control rounded-0" id="unit">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="qty" class="control-label">Qty</label>
+                                <label for="qty" class="control-label">จำนวน</label>
                                 <input type="number" step="any" class="form-control rounded-0" id="qty">
                             </div>
                         </div>
                         <div class="col-md-2 text-center">
                             <div class="form-group">
-                                <button type="button" class="btn btn-flat btn-sm btn-primary" id="add_to_list">Add to List</button>
+                                <button type="button" class="btn btn-flat btn-sm btn-primary rounded" id="add_to_list">เพิ่มในรายการ</button>
                             </div>
                         </div>
                 </fieldset>
@@ -96,11 +96,11 @@ if(isset($_GET['id'])){
                     <thead>
                         <tr class="text-light bg-navy">
                             <th class="text-center py-1 px-2"></th>
-                            <th class="text-center py-1 px-2">Qty</th>
-                            <th class="text-center py-1 px-2">Unit</th>
-                            <th class="text-center py-1 px-2">Item</th>
-                            <th class="text-center py-1 px-2">Cost</th>
-                            <th class="text-center py-1 px-2">Total</th>
+                            <th class="text-center py-1 px-2">จำนวน</th>
+                            <th class="text-center py-1 px-2">หน่วย</th>
+                            <th class="text-center py-1 px-2">สินค้า</th>
+                            <th class="text-center py-1 px-2">ราคา</th>
+                            <th class="text-center py-1 px-2">รวม</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -152,7 +152,7 @@ if(isset($_GET['id'])){
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="remarks" class="text-info control-label">Remarks</label>
+                            <label for="remarks" class="text-info control-label">หมายเหตุ</label>
                             <textarea name="remarks" id="remarks" rows="3" class="form-control rounded-0"><?php echo isset($remarks) ? $remarks : '' ?></textarea>
                         </div>
                     </div>
@@ -161,8 +161,8 @@ if(isset($_GET['id'])){
         </form>
     </div>
     <div class="card-footer py-1 text-center">
-        <button class="btn btn-flat btn-primary" type="submit" form="sale-form">Save</button>
-        <a class="btn btn-flat btn-dark" href="<?php echo base_url.'/admin?page=sale' ?>">Cancel</a>
+        <button class="btn btn-flat btn-primary rounded" type="submit" form="sale-form">Save</button>
+        <a class="btn btn-flat btn-dark rounded" href="<?php echo base_url.'/admin?page=sale' ?>">Cancel</a>
     </div>
 </div>
 <table id="clone_list" class="d-none">

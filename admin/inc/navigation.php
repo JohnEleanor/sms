@@ -27,7 +27,7 @@
                       <a href="./" class="nav-link nav-home">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                          Dashboard
+                          หน้าหลัก
                         </p>
                       </a>
                     </li>
@@ -35,39 +35,39 @@
                       <a href="<?php echo base_url ?>admin/?page=purchase_order" class="nav-link nav-purchase_order">
                         <i class="nav-icon fas fa-th-list"></i>
                         <p>
-                          Purchase Order
+                          ใบสั่งซื้อ
                         </p>
                       </a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                       <a href="<?php echo base_url ?>admin/?page=receiving" class="nav-link nav-receiving">
                         <i class="nav-icon fas fa-boxes"></i>
                         <p>
                           Receiving
                         </p>
                       </a>
-                    </li>
-                    <li class="nav-item">
+                    </li> -->
+                    <!-- <li class="nav-item">
                       <a href="<?php echo base_url ?>admin/?page=back_order" class="nav-link nav-back_order">
                         <i class="nav-icon fas fa-exchange-alt"></i>
                         <p>
                           Back Order
                         </p>
                       </a>
-                    </li>
-                    <li class="nav-item">
+                    </li> -->
+                    <!-- <li class="nav-item">
                       <a href="<?php echo base_url ?>admin/?page=return" class="nav-link nav-return">
                         <i class="nav-icon fas fa-undo"></i>
                         <p>
-                          Return List
+                          กลับรายการ
                         </p>
                       </a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                       <a href="<?php echo base_url ?>admin/?page=stocks" class="nav-link nav-stocks">
                         <i class="nav-icon fas fa-table"></i>
                         <p>
-                          Stocks
+                          รายการสินค้าในสต็อก
                         </p>
                       </a>
                     </li>
@@ -75,7 +75,7 @@
                       <a href="<?php echo base_url ?>admin/?page=sales" class="nav-link nav-sales">
                         <i class="nav-icon fas fa-file-invoice-dollar"></i>
                         <p>
-                          Sale List
+                          ประวัติการขาย
                         </p>
                       </a>
                     </li>
@@ -85,7 +85,7 @@
                       <a href="<?php echo base_url ?>admin/?page=maintenance/supplier" class="nav-link nav-maintenance_supplier">
                         <i class="nav-icon fas fa-truck-loading"></i>
                         <p>
-                          Supplier List
+                          รายชื่อผู้จัดจำหน่าย
                         </p>
                       </a>
                     </li>
@@ -93,7 +93,7 @@
                       <a href="<?php echo base_url ?>admin/?page=maintenance/item" class="nav-link nav-maintenance_item">
                         <i class="nav-icon fas fa-boxes"></i>
                         <p>
-                          Item List
+                          รายการสินค้า
                         </p>
                       </a>
                     </li>
@@ -101,7 +101,7 @@
                       <a href="<?php echo base_url ?>admin/?page=user/list" class="nav-link nav-user_list">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
-                          User List
+                          รายชื่อผู้ใช้
                         </p>
                       </a>
                     </li>
@@ -109,7 +109,7 @@
                       <a href="<?php echo base_url ?>admin/?page=system_info" class="nav-link nav-system_info">
                         <i class="nav-icon fas fa-cogs"></i>
                         <p>
-                          Settings
+                          ตั้งค่าเว็บไซด์
                         </p>
                       </a>
                     </li>

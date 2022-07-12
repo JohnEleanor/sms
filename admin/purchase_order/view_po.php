@@ -8,18 +8,18 @@ if($qry->num_rows >0){
 ?>
 <div class="card card-outline card-primary">
     <div class="card-header">
-        <h4 class="card-title">Purchase Order Details - <?php echo $po_code ?></h4>
+        <h4 class="card-title">รายละเอียดใบสั่งซื้อ - <?php echo $po_code ?></h4>
     </div>
     <div class="card-body" id="print_out">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
-                    <label class="control-label text-info">P.O. Code</label>
+                    <label class="control-label text-info">รหัสใบสั่งซื้อ</label>
                     <div><?php echo isset($po_code) ? $po_code : '' ?></div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="supplier_id" class="control-label text-info">Supplier</label>
+                        <label for="supplier_id" class="control-label text-info">ผู้ผลิต</label>
                         <div><?php echo isset($supplier) ? $supplier : '' ?></div>
                     </div>
                 </div>
@@ -35,11 +35,11 @@ if($qry->num_rows >0){
                 </colgroup>
                 <thead>
                     <tr class="text-light bg-navy">
-                        <th class="text-center py-1 px-2">Qty</th>
-                        <th class="text-center py-1 px-2">Unit</th>
-                        <th class="text-center py-1 px-2">Item</th>
-                        <th class="text-center py-1 px-2">Cost</th>
-                        <th class="text-center py-1 px-2">Total</th>
+                        <th class="text-center py-1 px-2">จำนวน</th>
+                        <th class="text-center py-1 px-2">หน่วย</th>
+                        <th class="text-center py-1 px-2">ชื่อสินค้า</th>
+                        <th class="text-center py-1 px-2">ราคา</th>
+                        <th class="text-center py-1 px-2">รวม</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -85,7 +85,7 @@ if($qry->num_rows >0){
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="remarks" class="text-info control-label">Remarks</label>
+                        <label for="remarks" class="text-info control-label">หมายเหตุ</label>
                         <p><?php echo isset($remarks) ? $remarks : '' ?></p>
                     </div>
                 </div>
@@ -98,9 +98,9 @@ if($qry->num_rows >0){
         </div>
     </div>
     <div class="card-footer py-1 text-center">
-        <button class="btn btn-flat btn-success" type="button" id="print">Print</button>
-        <a class="btn btn-flat btn-primary" href="<?php echo base_url.'/admin?page=purchase_order/manage_po&id='.(isset($id) ? $id : '') ?>">Edit</a>
-        <a class="btn btn-flat btn-dark" href="<?php echo base_url.'/admin?page=purchase_order' ?>">Back To List</a>
+        <button class="btn btn-flat btn-success rounded" type="button" id="print">ปรินต์ </button>
+        <a class="btn btn-flat btn-primary rounded" href="<?php echo base_url.'/admin?page=purchase_order/manage_po&id='.(isset($id) ? $id : '') ?>">เเก้ไขรายระเอียด</a>
+        <a class="btn btn-flat btn-dark rounded" href="<?php echo base_url.'/admin?page=purchase_order' ?>">กลับ</a>
     </div>
 </div>
 <table id="clone_list" class="d-none">
@@ -133,7 +133,7 @@ if($qry->num_rows >0){
             start_loader()
             var _el = $('<div>')
             var _head = $('head').clone()
-                _head.find('title').text("Purchase Order Details - Print View")
+                _head.find('title').text("รายละเอียดใบสั่งซื้อ - Print View")
             var p = $('#print_out').clone()
             p.find('tr.text-light').removeClass("text-light bg-navy")
             _el.append(_head)

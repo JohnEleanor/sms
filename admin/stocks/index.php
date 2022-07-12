@@ -1,6 +1,6 @@
 <div class="card card-outline card-primary">
 	<div class="card-header">
-		<h3 class="card-title">List of Stocks</h3>
+		<h3 class="card-title">รายการสินค้า</h3>
         <!-- <div class="card-tools">
 			<a href="<?php echo base_url ?>admin/?page=purchase_order/manage_po" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
 		</div> -->
@@ -19,10 +19,10 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Item Name</th>
-                            <th>Supplier</th>
-                            <th>Description</th>
-                            <th>Available Stocks</th>
+                            <th>ชื่อสินค้า</th>
+                            <th>ผู้ผลิต</th>
+                            <th>คำอธิบาย</th>
+                            <th>สินค้าที่มีอยู่</th>
                         </tr>
                     </thead>
                     <tbody>

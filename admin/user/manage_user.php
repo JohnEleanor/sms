@@ -19,11 +19,11 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 			<form action="" id="manage-user">	
 				<input type="hidden" name="id" value="<?php echo isset($meta['id']) ? $meta['id']: '' ?>">
 				<div class="form-group col-6">
-					<label for="name">First Name</label>
+					<label for="name">ชื่อจริง</label>
 					<input type="text" name="firstname" id="firstname" class="form-control" value="<?php echo isset($meta['firstname']) ? $meta['firstname']: '' ?>" required>
 				</div>
 				<div class="form-group col-6">
-					<label for="name">Last Name</label>
+					<label for="name">นามสกุล</label>
 					<input type="text" name="lastname" id="lastname" class="form-control" value="<?php echo isset($meta['lastname']) ? $meta['lastname']: '' ?>" required>
 				</div>
 				<div class="form-group col-6">
@@ -34,11 +34,11 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 					<label for="password">Password</label>
 					<input type="password" name="password" id="password" class="form-control" value="" autocomplete="off" <?php echo isset($meta['id']) ? "": 'required' ?>>
                     <?php if(isset($_GET['id'])): ?>
-					<small class="text-info"><i>Leave this blank if you dont want to change the password.</i></small>
+					<small class="text-info"><i>เว้นว่างไว้หากคุณไม่ต้องการเปลี่ยนรหัสผ่าน</i></small>
                     <?php endif; ?>
 				</div>
 				<div class="form-group col-6">
-					<label for="type">User Type</label>
+					<label for="type">ประเภทผู้ใช้</label>
 					<select name="type" id="type" class="custom-select" value="<?php echo isset($meta['type']) ? $meta['type']: '' ?>" required>
 						<option value="1" <?php echo isset($type) && $type == 1 ? 'selected': '' ?>>Administrator</option>
 						<option value="2"> <?php echo isset($type) && $type == 2 ? 'selected': '' ?>Staff</option>

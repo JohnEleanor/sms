@@ -1,8 +1,8 @@
 <div class="card card-outline card-primary">
 	<div class="card-header">
-		<h3 class="card-title">List of Item</h3>
+		<h3 class="card-title">รายการสินค้า</h3>
 		<div class="card-tools">
-			<a href="javascript:void(0)" id="create_new" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Add New</a>
+			<a href="javascript:void(0)" id="create_new" class="btn btn-flat btn-primary rounded"><span class="fas fa-plus"></span> เพิ่มใหม่</a>
 		</div>
 	</div>
 	<div class="card-body">
@@ -20,10 +20,10 @@
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>Date Created</th>
-						<th>Name</th>
-						<th>Supplier</th>
-						<th>Status</th>
+						<th>วันที่สร้าง</th>
+						<th>ชื่อสินค้า</th>
+						<th>ผู้ผลิต</th>
+						<th>สถานะ</th>
 						<th>Action</th>
 					</tr>
 				</thead>
@@ -38,13 +38,7 @@
 							<td><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td>
 							<td><?php echo $row['name'] ?></td>
 							<td><?php echo $row['supplier'] ?></td>
-							<td class="text-center">
-                                <?php if($row['status'] == 1): ?>
-                                    <span class="badge badge-success rounded-pill">Active</span>
-                                <?php else: ?>
-                                    <span class="badge badge-danger rounded-pill">Inactive</span>
-                                <?php endif; ?>
-                            </td>
+							<td><?php echo $row['cost'] ?></td>
 							<td align="center">
 								 <button type="button" class="btn btn-flat btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
 				                  		Action
@@ -72,7 +66,7 @@
 			_conf("Are you sure to delete this Item permanently?","delete_category",[$(this).attr('data-id')])
 		})
 		$('#create_new').click(function(){
-			uni_modal("<i class='fa fa-plus'></i> Add New Item","maintenance/manage_item.php","mid-large")
+			uni_modal("<i class='fa fa-plus'></i> เพิ่มสินค้าใหม่","maintenance/manage_item.php","mid-large")
 		})
 		$('.edit_data').click(function(){
 			uni_modal("<i class='fa fa-edit'></i> Edit Item Details","maintenance/manage_item.php?id="+$(this).attr('data-id'),"mid-large")

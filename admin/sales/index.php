@@ -1,8 +1,8 @@
 <div class="card card-outline card-primary">
 	<div class="card-header">
-		<h3 class="card-title">List of Sales</h3>
+		<h3 class="card-title">รายการขาย</h3>
         <div class="card-tools">
-			<a href="<?php echo base_url ?>admin/?page=sales/manage_sale" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
+			<a href="<?php echo base_url ?>admin/?page=sales/manage_sale" class="btn btn-flat btn-primary rounded"><span class="fas fa-plus"></span>  สร้างใหม่</a>
 		</div>
 	</div>
 	<div class="card-body">
@@ -21,11 +21,11 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Date Created</th>
-                            <th>Sale Code</th>
-                            <th>Client</th>
-                            <th>Items</th>
-                            <th>Amount</th>
+                            <th>วันที่สร้าง</th>
+                            <th>รหัสการขาย</th>
+                            <th>ลูกค้า</th>
+                            <th>จำนวน</th>
+                            <th>ราคา</th>
                             <th>Action</th>
                         </tr>
                     </thead>

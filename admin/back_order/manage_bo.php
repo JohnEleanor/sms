@@ -23,7 +23,7 @@ if(isset($_GET['id'])){
 </style>
 <div class="card card-outline card-primary">
     <div class="card-header">
-        <h4 class="card-title"><?php echo isset($id) ? "Purchase Order Details - ".$po_code : 'Create New Purchase Order' ?></h4>
+        <h4 class="card-title"><?php echo isset($id) ? "รายละเอียดใบสั่งซื้อ - ".$po_code : 'Create New Purchase Order' ?></h4>
     </div>
     <div class="card-body">
         <form action="" id="po-form">

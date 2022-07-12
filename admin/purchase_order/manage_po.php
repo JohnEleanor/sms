@@ -23,7 +23,7 @@ if(isset($_GET['id'])){
 </style>
 <div class="card card-outline card-primary">
     <div class="card-header">
-        <h4 class="card-title"><?php echo isset($id) ? "Purchase Order Details - ".$po_code : 'Create New Purchase Order' ?></h4>
+        <h4 class="card-title"><?php echo isset($id) ? "รายละเอียดใบสั่งซื้อ - ".$po_code : 'สร้างใบสั่งซื้อใหม่' ?></h4>
     </div>
     <div class="card-body">
         <form action="" id="po-form">
@@ -36,7 +36,7 @@ if(isset($_GET['id'])){
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="supplier_id" class="control-label text-info">Supplier</label>
+                            <label for="supplier_id" class="control-label text-info">ผู้ผลิต</label>
                             <select name="supplier_id" id="supplier_id" class="custom-select select2">
                             <option <?php echo !isset($supplier_id) ? 'selected' : '' ?> disabled></option>
                             <?php 
@@ -51,7 +51,7 @@ if(isset($_GET['id'])){
                 </div>
                 <hr>
                 <fieldset>
-                    <legend class="text-info">Item Form</legend>
+                    <legend class="text-info">แบบฟอร์มรายการ</legend>
                     <div class="row justify-content-center align-items-end">
                             <?php 
                                 $item_arr = array();
@@ -64,7 +64,7 @@ if(isset($_GET['id'])){
                             ?>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="item_id" class="control-label">Item</label>
+                                <label for="item_id" class="control-label">สินค้า</label>
                                 <select  id="item_id" class="custom-select ">
                                     <option disabled selected></option>
                                 </select>
@@ -72,19 +72,19 @@ if(isset($_GET['id'])){
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="unit" class="control-label">Unit</label>
+                                <label for="unit" class="control-label">หน่วย</label>
                                 <input type="text" class="form-control rounded-0" id="unit">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="qty" class="control-label">Qty</label>
+                                <label for="qty" class="control-label">จำนวน</label>
                                 <input type="number" step="any" class="form-control rounded-0" id="qty">
                             </div>
                         </div>
                         <div class="col-md-2 text-center">
                             <div class="form-group">
-                                <button type="button" class="btn btn-flat btn-sm btn-primary" id="add_to_list">Add to List</button>
+                                <button type="button" class="btn btn-flat btn-sm btn-primary rounded" id="add_to_list">เพิ่มในรายการ</button>
                             </div>
                         </div>
                 </fieldset>
@@ -101,11 +101,11 @@ if(isset($_GET['id'])){
                     <thead>
                         <tr class="text-light bg-navy">
                             <th class="text-center py-1 px-2"></th>
-                            <th class="text-center py-1 px-2">Qty</th>
-                            <th class="text-center py-1 px-2">Unit</th>
-                            <th class="text-center py-1 px-2">Item</th>
-                            <th class="text-center py-1 px-2">Cost</th>
-                            <th class="text-center py-1 px-2">Total</th>
+                            <th class="text-center py-1 px-2">จำนวน</th>
+                            <th class="text-center py-1 px-2">หน่วย</th>
+                            <th class="text-center py-1 px-2">สินค้า</th>
+                            <th class="text-center py-1 px-2">ราคา</th>
+                            <th class="text-center py-1 px-2">รวมทั้งหมด</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -147,23 +147,23 @@ if(isset($_GET['id'])){
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th class="text-right py-1 px-2" colspan="5">Sub Total</th>
+                            <th class="text-right py-1 px-2" colspan="5">ยอดรวม</th>
                             <th class="text-right py-1 px-2 sub-total">0</th>
                         </tr>
                         <tr>
-                            <th class="text-right py-1 px-2" colspan="5">Discount <input style="width:40px !important" name="discount_perc" class='' type="number" min="0" max="100" value="<?php echo isset($discount_perc) ? $discount_perc : 0 ?>">%
+                            <th class="text-right py-1 px-2" colspan="5">ส่วนลด <input style="width:40px !important" name="discount_perc" class='' type="number" min="0" max="100" value="<?php echo isset($discount_perc) ? $discount_perc : 0 ?>">%
                                 <input type="hidden" name="discount" value="<?php echo isset($discount) ? $discount : 0 ?>">
                             </th>
                             <th class="text-right py-1 px-2 discount"><?php echo isset($discount) ? number_format($discount) : 0 ?></th>
                         </tr>
                         <tr>
-                            <th class="text-right py-1 px-2" colspan="5">Tax <input style="width:40px !important" name="tax_perc" class='' type="number" min="0" max="100" value="<?php echo isset($tax_perc) ? $tax_perc : 0 ?>">%
+                            <th class="text-right py-1 px-2" colspan="5">ภาษี <input style="width:40px !important" name="tax_perc" class='' type="number" min="0" max="100" value="<?php echo isset($tax_perc) ? $tax_perc : 0 ?>">%
                                 <input type="hidden" name="tax" value="<?php echo isset($discount) ? $discount : 0 ?>">
                             </th>
                             <th class="text-right py-1 px-2 tax"><?php echo isset($tax) ? number_format($tax) : 0 ?></th>
                         </tr>
                         <tr>
-                            <th class="text-right py-1 px-2" colspan="5">Total
+                            <th class="text-right py-1 px-2" colspan="5">ราคาสุทธิ
                                 <input type="hidden" name="amount" value="<?php echo isset($discount) ? $discount : 0 ?>">
                             </th>
                             <th class="text-right py-1 px-2 grand-total">0</th>
@@ -173,7 +173,7 @@ if(isset($_GET['id'])){
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="remarks" class="text-info control-label">Remarks</label>
+                            <label for="remarks" class="text-info control-label">หมายเหตุ</label>
                             <textarea name="remarks" id="remarks" rows="3" class="form-control rounded-0"><?php echo isset($remarks) ? $remarks : '' ?></textarea>
                         </div>
                     </div>
@@ -182,8 +182,8 @@ if(isset($_GET['id'])){
         </form>
     </div>
     <div class="card-footer py-1 text-center">
-        <button class="btn btn-flat btn-primary" type="submit" form="po-form">Save</button>
-        <a class="btn btn-flat btn-dark" href="<?php echo base_url.'/admin?page=purchase_order' ?>">Cancel</a>
+        <button class="btn btn-flat btn-primary rounded" type="submit" form="po-form">Save</button>
+        <a class="btn btn-flat btn-dark rounded" href="<?php echo base_url.'/admin?page=purchase_order' ?>">Cancel</a>
     </div>
 </div>
 <table id="clone_list" class="d-none">

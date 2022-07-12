@@ -14,17 +14,17 @@ if($qry->num_rows >0){
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6">
-                    <label class="control-label text-info">Sales Code</label>
+                    <label class="control-label text-info">รหัสการขาย</label>
                     <div><?php echo isset($sales_code) ? $sales_code : '' ?></div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="client" class="control-label text-info">Client Name</label>
+                        <label for="client" class="control-label text-info">ชื่อลูกค้า</label>
                         <div><?php echo isset($client) ? $client : '' ?></div>
                     </div>
                 </div>
             </div>
-            <h4 class="text-info">Items</h4>
+            <h4 class="text-info">รายการสินค้า</h4>
             <table class="table table-striped table-bordered" id="list">
                 <colgroup>
                     <col width="10%">
@@ -35,11 +35,11 @@ if($qry->num_rows >0){
                 </colgroup>
                 <thead>
                     <tr class="text-light bg-navy">
-                        <th class="text-center py-1 px-2">Qty</th>
-                        <th class="text-center py-1 px-2">Unit</th>
-                        <th class="text-center py-1 px-2">Item</th>
-                        <th class="text-center py-1 px-2">Cost</th>
-                        <th class="text-center py-1 px-2">Total</th>
+                        <th class="text-center py-1 px-2">จำนวน</th>
+                        <th class="text-center py-1 px-2">หน่วย</th>
+                        <th class="text-center py-1 px-2">ชื่อสินค้า</th>
+                        <th class="text-center py-1 px-2">ราคา</th>
+                        <th class="text-center py-1 px-2">รวม</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,7 +73,7 @@ if($qry->num_rows >0){
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="remarks" class="text-info control-label">Remarks</label>
+                        <label for="remarks" class="text-info control-label">หมายเหตุ</label>
                         <p><?php echo isset($remarks) ? $remarks : '' ?></p>
                     </div>
                 </div>

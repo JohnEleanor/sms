@@ -15,7 +15,7 @@ Class Users extends DBConnection {
 		$oid = $id;
 		$data = '';
 		if(isset($oldpassword)){
-			if(md5($oldpassword) != $this->settings->userdata('password')){
+			if ($oldpassword != $this->settings->userdata('password')) {
 				return 4;
 			}
 		}
@@ -31,7 +31,7 @@ Class Users extends DBConnection {
 			}
 		}
 		if(!empty($password)){
-			$password = md5($password);
+			$password = $password;
 			if(!empty($data)) $data .=" , ";
 			$data .= " `password` = '{$password}' ";
 		}
@@ -152,7 +152,7 @@ Class Users extends DBConnection {
 		}
 
 			if(!empty($password))
-			$data .= ", `password` = '".md5($password)."' ";
+			$data .= ", `password` = '".$password."' ";
 		
 			if(isset($_FILES['img']) && $_FILES['img']['tmp_name'] != ''){
 				$fname = 'uploads/'.strtotime(date('y-m-d H:i')).'_'.$_FILES['img']['name'];

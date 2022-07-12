@@ -1,9 +1,9 @@
 
 <div class="card card-outline card-primary">
 	<div class="card-header">
-		<h3 class="card-title">List of Supplier</h3>
+		<h3 class="card-title">รายชื่อผู้จัดจำหน่าย</h3>
 		<div class="card-tools">
-			<a href="javascript:void(0)" id="create_new" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
+			<a href="javascript:void(0)" id="create_new" class="btn btn-flat btn-primary rounded"><span class="fas fa-plus"></span>  สร้างใหม่</a>
 		</div>
 	</div>
 	<div class="card-body">
@@ -21,10 +21,10 @@
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>Date Created</th>
-						<th>Supplier</th>
-						<th>Contact Person</th>
-						<th>Status</th>
+						<th>วันที่สร้าง</th>
+						<th>ผู้ผลิต</th>
+						<th>เบอร์</th>
+						<th>ชื่อผู้ติดต่อ</th>
 						<th>Action</th>
 					</tr>
 				</thead>
@@ -38,14 +38,15 @@
 							<td class="text-center"><?php echo $i++; ?></td>
 							<td><?php echo date("Y-m-d H:i",strtotime($row['date_created'])) ?></td>
 							<td><?php echo $row['name'] ?></td>
+							<td><?php echo $row['contact'] ?></td>
 							<td class=""><?php echo $row['cperson'] ?></td>
-							<td class="text-center">
+							<!-- <td class="text-center">
                                 <?php if($row['status'] == 1): ?>
                                     <span class="badge badge-success rounded-pill">Active</span>
                                 <?php else: ?>
                                     <span class="badge badge-danger rounded-pill">Inactive</span>
                                 <?php endif; ?>
-                            </td>
+                            </td> -->
 							<td align="center">
 								 <button type="button" class="btn btn-flat btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
 				                  		Action
@@ -73,13 +74,13 @@
 			_conf("Are you sure to delete this Supplier permanently?","delete_category",[$(this).attr('data-id')])
 		})
 		$('#create_new').click(function(){
-			uni_modal("<i class='fa fa-plus'></i> Add New Supplier","maintenance/manage_supplier.php","mid-large")
+			uni_modal("<i class='fa fa-plus'></i> เพิ่ม Supplier","maintenance/manage_supplier.php","mid-large")
 		})
 		$('.edit_data').click(function(){
-			uni_modal("<i class='fa fa-edit'></i> Edit Supplier Detials","maintenance/manage_supplier.php?id="+$(this).attr('data-id'),"mid-large")
+			uni_modal("<i class='fa fa-edit'></i> เเก้ไขรายระเอียด Supplier","maintenance/manage_supplier.php?id="+$(this).attr('data-id'),"mid-large")
 		})
 		$('.view_data').click(function(){
-			uni_modal("<i class='fa fa-truck-loading'></i> Supplier Details","maintenance/view_supplier.php?id="+$(this).attr('data-id'),"")
+			uni_modal("<i class='fa fa-truck-loading'></i> รายระเอียด Supplier","maintenance/view_supplier.php?id="+$(this).attr('data-id'),"")
 		})
 		$('.table td,.table th').addClass('py-1 px-2 align-middle')
 		$('.table').dataTable();

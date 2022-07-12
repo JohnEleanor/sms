@@ -21,10 +21,10 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="./" class="h1"><b>Login</b></a>
+      <a href="./" class="h1"><b>เข้าสู่ระบบ</b></a>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">เข้าสู่ระบบเพื่อเข้าใช้งาน</p>
 
       <form id="login-frm" action="" method="post">
         <div class="input-group mb-3">

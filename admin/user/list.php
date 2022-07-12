@@ -15,9 +15,9 @@
 </style>
 <div class="card card-outline card-primary">
 	<div class="card-header">
-		<h3 class="card-title">List of System Users</h3>
+		<h3 class="card-title">รายชื่อผู้ใช้ระบบ</h3>
 		<div class="card-tools">
-			<a href="?page=user/manage_user" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
+			<a href="?page=user/manage_user" class="btn btn-flat btn-primary rounded"><span class="fas fa-plus"></span>  เพิ่มผู้ใช้งาน</a>
 		</div>
 	</div>
 	<div class="card-body">
@@ -37,9 +37,9 @@
 					<tr>
 						<th>#</th>
 						<th>Avatar</th>
-						<th>Name</th>
+						<th>ชื่อ</th>
 						<th>Username</th>
-						<th>User Type</th>
+						<th>ประเภทผู้ใช้</th>
 						<th>Action</th>
 					</tr>
 				</thead>
@@ -77,7 +77,7 @@
 <script>
 	$(document).ready(function(){
 		$('.delete_data').click(function(){
-			_conf("Are you sure to delete this User permanently?","delete_user",[$(this).attr('data-id')])
+			_conf("คุณเเน่ใจใช่ไหมว่าต้องการลบ","delete_user",[$(this).attr('data-id')])
 		})
 		$('.table td,.table th').addClass('py-1 px-2 align-middle')
 		$('.table').dataTable();
